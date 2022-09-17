@@ -13,10 +13,9 @@ iniciar_trivia = True
 intentos = 0
 
 print(MAGENTA+"BIENVENIDO A MI TRIVIA"+RESET)
-print(MAGENTA+"Pondre en practica lo aprendido"+RESET)
+print(MAGENTA+"Pondré en practica lo aprendido"+RESET)
 puntaje = 0
-#import random
-#puntaje = random.randint(0, 5)
+
 print("Iniciamos con puntaje: ",puntaje)
 
 nombre = input("Ingresa tu nombre: ")
@@ -24,15 +23,18 @@ nombre = input("Ingresa tu nombre: ")
 while iniciar_trivia == True:
   intentos += 1
   puntaje = 0
-  print("\nIntento numero:", intentos)
-  input("Precione Enter para continuar")
-  print("Primera pregunta...")
+  print("\nEste es tu Intento número:", intentos)
+  input(BLACK+"Precione Enter para continuar\n"+RESET)
   print("Imagina que aqui procede toda tu trivia")
-  time.sleep(5)
+  time.sleep(2)
   print("Jugando...")
-  time.sleep(5)
+  time.sleep(2)
   
   print (CYAN+" \n Hola", nombre, "responde las siguientes preguntas escribiendo la letra de la alternativa correcta y presiona 'Enter' para enviar tu respuesta: \n"+RESET)
+  print("PRIMERA PREGUNTA...")
+  time.sleep(3)
+
+  print(BLACK+"\nRecuerda que una respuesta inválida te resta 3 puntos\n"+RESET)
 
 #PRIMERA PREGUNTA
   print(BLUE+"1.- Quien fue el primer Inca?\n"+RESET)
@@ -51,7 +53,7 @@ while iniciar_trivia == True:
     puntaje += 5
     print(GREEN+"Muy bien", nombre, "!"+RESET)
   else:
-    puntaje -= 5
+    puntaje -= 3
     print(RED+"Incorrecto", nombre, "!"+RESET)
   
 #print("\nGracias", nombre, "por jugar mi trivia. Tu puntaje es: ", puntaje)
@@ -59,6 +61,9 @@ while iniciar_trivia == True:
   print(nombre, "llevas", puntaje, "puntos")
 
 #SEGUNDA PREGUNTA CON RESPUESTA SECRETA
+  print("\nSEGUNDA PREGUNTA... 'Respuesta secreta'")
+  time.sleep(3)
+  
   print(BLUE+"\n2.- Quien fue el primer Virrey del Peru? \n"+RESET)
   print("a) Antonio de Mendoza")
   print("b) Francisco de Toledo")
@@ -71,13 +76,13 @@ while iniciar_trivia == True:
     respuesta_2 = input("Debes responder a, b, c o d. Ingresa nuevamente tu respuesta:")
 
   if respuesta_2 == "a":
-    puntaje -= 5
+    puntaje -= 3
     print (RED+"Incorrecto", nombre, "!\nAntonio de Mendoza fue el 2do Virrey"+RESET)
   elif respuesta_2 == "b":
-    puntaje -= 5
+    puntaje -= 3
     print(RED+"Incorrecto", nombre, "!\nFrancisco de Toledo fue el 5to Virrey"+RESET)
   elif respuesta_2 == "c":
-    puntaje -= 5
+    puntaje -= 3
     print(RED+"Incorrecto", nombre, "!\nJose de la Serna de Hinojosa fue el ultimo virrey"+RESET)
   elif respuesta_2 == "d":
     puntaje += 5
@@ -90,6 +95,8 @@ while iniciar_trivia == True:
   print(nombre, "llevas", puntaje, "puntos")
 
 #TERCERA PREGUNTA
+
+  print("\nTERCERA PREGUNTA...'Puntaje con trucos'")
   print(BLUE+"\n3.- Quien fue el primer presidente del Peru? \n"+RESET)
   print("a) Alan Garcia Perez ")
   print("b) Jose de la Riva Aguero")
@@ -117,9 +124,10 @@ while iniciar_trivia == True:
   print(nombre, "llevas", puntaje, "puntos")
 
 #JUEGO DE NUMEROS
-
+  
   print(BLUE+"\n4.- Juego Aritmetico\n"+RESET)
 
+  print(BLACK+"no suma, ni resta puntos....extra\n"+RESET)
   def ejercicio1():
     x = int(input("Ingrese el primer numero: "))
     y = int(input("ingrese el segundo numero: "))
@@ -139,12 +147,14 @@ while iniciar_trivia == True:
   
   if num == 1:
     ejercicio1()
+    
   elif num == 2:
     ejercicio2()
+    
   elif num == 3:
     ejercicio3()
 
-  time.sleep(3)
+  time.sleep(2)
 
   print(GREEN+"\nGracias", nombre, "por jugar mi trivia")
 #puntaje
@@ -152,8 +162,10 @@ while iniciar_trivia == True:
     print (nombre,"llevas",puntaje, "punto positivo")
   else:
     print(nombre,"llevas",puntaje, "punto negativos")
+
 #repetir trivia
   print("Excelente, has obtenido",puntaje, "puntos"+RESET)
+
   print("\nDesea intentar la trivia nuevamente?")
   repetir_trivia = input("Ingresa 'si' para repetir, o cualquier tecla para finalizar: ").lower()
   if repetir_trivia != "si":
